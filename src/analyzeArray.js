@@ -1,24 +1,15 @@
 
-function analyzeArray(analyzeArr) {
+const analyzeArray = (analyzeArr) => {
 
-    let numObj = {};
-
-    let sum = analyzeArr.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-    let average = sum / analyzeArr.length;
-
-    let min = Math.min(...analyzeArr);
-
-    let max = Math.max(...analyzeArr);
-
-    let length = analyzeArr.length;
-
-    numObj.average = average;
-    numObj.min = min;
-    numObj.max = max;
-    numObj.length = length;
-
-    return numObj;
+    return {
+        average: (analyzeArr.reduce((previousValue, currentValue) => previousValue + currentValue, 0))/ analyzeArr.length,
+        
+        min: Math.min(...analyzeArr),
     
+        max: Math.max(...analyzeArr),
+    
+        length: analyzeArr.length,
+    };
 };
 
 export { analyzeArray }
